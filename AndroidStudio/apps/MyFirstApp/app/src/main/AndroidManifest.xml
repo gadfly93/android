@@ -19,6 +19,7 @@
         <activity
             android:name=".DisplayMessageActivity"
             android:label="@string/title_activity_display_message"
+            android:theme="@style/Theme.AppCompat.Light"
             android:parentActivityName=".MyActivity" >
             android:
             <meta-data
@@ -28,6 +29,6 @@
     </application>
     <uses-sdk
         android:minSdkVersion="7"
-        android:maxSdkVersion="17" />
+        android:targetSdkVersion="18" />
 
 </manifest>
