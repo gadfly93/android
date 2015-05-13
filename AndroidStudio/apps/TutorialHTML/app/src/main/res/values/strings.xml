@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TutorialHTML</string>
+
+    <string name="usernameHint">username</string>
+    <string name="passwordHint">password</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_personal">PersonalActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+</resources>
