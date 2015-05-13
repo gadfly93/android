@@ -54,11 +54,11 @@ public class LoginActivity extends ActionBarActivity {
         EditText editPassword = (EditText) findViewById(R.id.passwordText);
         String password = editPassword.getText().toString();
 
-        if (username == "") {
+        if (Objects.equals(username, "")) {
             editUsername.setHint("type a valid username");
             editPassword.setText("");
-        } else
-            if (password == "") {
+        } else {
+            if (Objects.equals(password, "")) {
                 editPassword.setHint("type a valid password");
             } else {
                 i.putExtra(EXTRA_USERNAME, username);
@@ -68,15 +68,17 @@ public class LoginActivity extends ActionBarActivity {
         }
     }
 
+
     // called when user click on clear button
     public void clearCredentials(View view){
 
-        EditText editText = (EditText) findViewById(R.id.usernameText);
-        editText.setText("");
+        EditText editUsername = (EditText) findViewById(R.id.usernameText);
+        editUsername.setText("");
+        editUsername.setHint(R.string.usernameHint);
 
-        editText = (EditText) findViewById(R.id.passwordText);
-        editText.setText("");
-
+        EditText editPassword = (EditText) findViewById(R.id.usernameText);
+        editPassword.setText("");
+        editUsername.setHint(R.string.passwordHint);
 
     }
 }
