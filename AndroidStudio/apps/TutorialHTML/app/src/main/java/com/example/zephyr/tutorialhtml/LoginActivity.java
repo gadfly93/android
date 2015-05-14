@@ -56,10 +56,12 @@ public class LoginActivity extends ActionBarActivity {
 
         if (Objects.equals(username, "")) {
             editUsername.setHint("type a valid username");
+            editUsername.setHintTextColor(getResources().getColor(R.color.red));
             editPassword.setText("");
         } else {
             if (Objects.equals(password, "")) {
                 editPassword.setHint("type a valid password");
+                editPassword.setHintTextColor(getResources().getColor(R.color.red));
             } else {
                 i.putExtra(EXTRA_USERNAME, username);
                 i.putExtra(EXTRA_PASSWORD, password);
@@ -75,10 +77,12 @@ public class LoginActivity extends ActionBarActivity {
         EditText editUsername = (EditText) findViewById(R.id.usernameText);
         editUsername.setText("");
         editUsername.setHint(R.string.usernameHint);
+        editUsername.setHintTextColor(getResources().getColor(R.color.hint_foreground_material_light));
 
-        EditText editPassword = (EditText) findViewById(R.id.usernameText);
+        EditText editPassword = (EditText) findViewById(R.id.passwordText);
         editPassword.setText("");
-        editUsername.setHint(R.string.passwordHint);
+        editPassword.setHint(R.string.passwordHint);
+        editPassword.setHintTextColor(getResources().getColor(R.color.hint_foreground_material_light));
 
     }
 }
