@@ -46,6 +46,15 @@
         android:layout_alignRight="@+id/passwordText"
         android:onClick="clearCredentials" />
 
+    <Button
+        android:id="@+id/mapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Map"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="goToMaps" />
+
     <CheckBox
         android:id="@+id/rememberMeCheckBox"
         android:text="@string/rememberMeText"

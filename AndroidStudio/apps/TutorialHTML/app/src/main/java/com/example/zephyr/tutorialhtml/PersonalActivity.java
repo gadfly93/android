@@ -3,9 +3,14 @@ package com.example.zephyr.tutorialhtml;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.internal.widget.ActionBarOverlayLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import java.util.Objects;
 
 
 public class PersonalActivity extends ActionBarActivity {
@@ -15,24 +20,29 @@ public class PersonalActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
         // get the two extras containg credentials from the intent
-        Intent i = getIntent();
-        String username = i.getStringExtra(LoginActivity.EXTRA_USERNAME);
-        String password = i.getStringExtra(LoginActivity.EXTRA_PASSWORD);
+        Intent intent = getIntent();
+        String username = intent.getStringExtra(LoginActivity.EXTRA_USERNAME);
+        String password = intent.getStringExtra(LoginActivity.EXTRA_PASSWORD);
 
         // concatenate username and password strings
         String credentials = username+"\n"+password;
 
-        // create the text view
-        TextView textView = new TextView(this);
-        textView.setTextSize(40);
-        textView.setText(credentials);
+        //set the .xml file as the activity layout
+        setContentView(R.layout.activity_personal);
 
-        // set the text view as the activity layout
-        setContentView(textView);
+        //access to the layout TextView item
+        TextView textCredential = (TextView) findViewById(R.id.credentialText);
 
+        // modify text view content
+        textCredential.setText(credentials);
     }
 
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_personal, menu);
+        return true;
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -42,10 +52,21 @@ public class PersonalActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.action_settings:
+                return true;
+            case R.id.action_goToMaps:
+                goToMaps();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
     }
+
+    public void goToMaps(){
+
+        Intent i = new Intent(this, MapsActivity.class);
+        startActivity(i);
+    }
+
 }
