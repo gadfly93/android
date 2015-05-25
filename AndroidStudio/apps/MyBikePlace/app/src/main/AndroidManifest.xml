@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.zephyr.tutorialhtml" >
+    package="com.dev.mybp.mybikeplace" >
+
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -38,7 +39,12 @@
             android:parentActivityName=".LoginActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.zephyr.tutorialhtml.LoginActivity" />
+                android:value="com.dev.mybp.mybikeplace.LoginActivity" />
+        </activity>
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps" >
         </activity>
 
         <meta-data
@@ -46,18 +52,8 @@
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBc5p4-UNQaG46hhlJXEBhtDV-dHSyXID0" />
+            android:value="AIzaSyBgeFxs85Xg0-IkwbBn0HqZq3jvG7VEq9Y" />
 
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" >
-        </activity>
-
-        <activity
-            android:name=".TestHTTPActivity"
-            android:label="@string/title_activity_testhttp"
-            android:parentActivityName=".LoginActivity" >
-        </activity>
 
     </application>
 

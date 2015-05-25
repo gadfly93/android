@@ -1,17 +1,19 @@
-package com.example.zephyr.tutorialhtml;
-
+package com.dev.mybp.mybikeplace;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.internal.widget.ActionBarOverlayLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Objects;
 
 
 public class PersonalActivity extends ActionBarActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +30,11 @@ public class PersonalActivity extends ActionBarActivity {
         //set the .xml file as the activity layout
         setContentView(R.layout.activity_personal);
 
+        //access to the layout TextView item
+        TextView textCredential = (TextView) findViewById(R.id.credentialText);
+
         // modify text view content
-        TextView credentialText = (TextView) findViewById(R.id.credentialText);
-        credentialText.setText(credentials);
+        textCredential.setText(credentials);
     }
 
     @Override
@@ -64,4 +68,5 @@ public class PersonalActivity extends ActionBarActivity {
         Intent i = new Intent(this, MapsActivity.class);
         startActivity(i);
     }
+
 }

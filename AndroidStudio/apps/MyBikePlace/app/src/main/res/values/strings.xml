@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">TutorialHTML</string>
+    <string name="app_name">MyBikePlace</string>
     <string name="hello_world">Hello World!</string>
     <string name="usernameHint">username</string>
     <string name="passwordHint">password</string>
@@ -11,6 +11,5 @@
     <string name="title_activity_personal">PersonalActivity</string>
     <string name="title_activity_fragment">FragmentActivity</string>
     <string name="title_activity_maps">MapsActivity</string>
-    <string name="title_activity_testhttp">TestHTTPActivity</string>
 
 </resources>

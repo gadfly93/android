@@ -1,4 +1,4 @@
-package com.example.zephyr.tutorialhtml;
+package com.dev.mybp.mybikeplace;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,11 +7,6 @@ import android.view.MenuItem;
 
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.*;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 
 
 public class MapsActivity extends Activity implements OnMapReadyCallback {
@@ -31,15 +26,12 @@ public class MapsActivity extends Activity implements OnMapReadyCallback {
 
         map.setMyLocationEnabled(true);
 
-        MapsMarker marker1 = new MapsMarker("Casa di Amore Mio", "The most beautiful girl in the world", 45.211410, 7.629830);
-        MapsMarker marker2 = new MapsMarker("Casa Mia", "tanto lontana da casa di amore mio :'(", 45.064560, 7.524945);
-        MapsMarker marker3 = new MapsMarker("Politecnico", "Universita' di Torino", 45.062936, 7.660747);
+        MapsMarker marker1 = new MapsMarker("Politecnico", "Universita' di Torino", 45.062936, 7.660747);
 
         setMarkerInMap(map, marker1);
-        setMarkerInMap(map, marker2);
-        setMarkerInMap(map, marker3);
 
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(marker3.markerLatLng, 13));
+
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(marker1.markerLatLng, 13));
 
         map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
     }

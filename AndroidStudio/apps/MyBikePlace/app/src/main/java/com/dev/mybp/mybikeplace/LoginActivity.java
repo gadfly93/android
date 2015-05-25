@@ -1,10 +1,6 @@
-package com.example.zephyr.tutorialhtml;
+package com.dev.mybp.mybikeplace;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -42,8 +38,6 @@ public class LoginActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent i = new Intent(this, TestHTTPActivity.class);
-            startActivity(i);
             return true;
         }
 
@@ -95,28 +89,6 @@ public class LoginActivity extends ActionBarActivity {
     public void goToMaps(View view){
 
         Intent i = new Intent(this, MapsActivity.class);
-        startActivity(i);
-    }
-
-    public void testConnection(View view) {
-
-        Intent i = new Intent(this, PersonalActivity.class);
-
-        String username;
-        String password = "";
-
-        ConnectivityManager connMgr = (ConnectivityManager)
-        getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-
-        if (networkInfo != null && networkInfo.isConnected()) {
-            username = "Connection is stable";
-        } else {
-            username = "NO CONNECTION!";
-        }
-
-        i.putExtra(EXTRA_USERNAME, username);
-        i.putExtra(EXTRA_PASSWORD, password);
         startActivity(i);
     }
 }

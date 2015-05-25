@@ -1,0 +1,31 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zephyr.tutorialhtml.TestHTTPActivity">
+
+    <EditText
+        android:id="@+id/urlText"
+        android:inputType="textUri"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="type an URL"
+        android:layout_alignParentTop="true" />
+
+    <Button
+        android:id="@+id/downloadURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/urlText"
+        android:layout_centerHorizontal="true"
+        android:text="Download from URL"
+        android:onClick="downloadFromURL" />
+
+    <TextView
+        android:id="@+id/downloadText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/downloadURL" />
+
+</RelativeLayout>

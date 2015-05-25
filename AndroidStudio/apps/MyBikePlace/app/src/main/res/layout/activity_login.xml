@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Send"
-        android:layout_above="@+id/connectionButton"
+        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/passwordText"
         android:onClick="sendCredentials" />
 
@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cancel"
-        android:layout_above="@+id/connectionButton"
+        android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/passwordText"
         android:onClick="clearCredentials" />
 
@@ -51,19 +51,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Map"
-        android:layout_above="@+id/connectionButton"
-        android:layout_centerHorizontal="true"
-        android:onClick="goToMaps" />
-
-    <Button
-        android:id="@+id/connectionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Test Connection"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="testConnection" />
-
+        android:onClick="goToMaps" />
 
     <CheckBox
         android:id="@+id/rememberMeCheckBox"
