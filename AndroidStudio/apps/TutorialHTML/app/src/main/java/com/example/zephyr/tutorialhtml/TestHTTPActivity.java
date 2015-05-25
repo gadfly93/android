@@ -93,17 +93,19 @@ public class TestHTTPActivity extends ActionBarActivity {
             InputStream is = null;
             // Only display the first 1000 characters of the retrieved
             // web page content.
-            int len = 1000;
 
             try {
                 URL url = new URL(myurl);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setReadTimeout(10000 /*milliseconds*/);
-                conn.setConnectTimeout(15000 /*milliseconds*/);
+
+                // Set request nature and parameters
                 conn.setRequestMethod("POST");
                 conn.setDoInput(true);
+
                 // Starts the query
                 conn.connect();
+
+                // Read the response
                 int responseCode = conn.getResponseCode();
                 Log.d(DEBUG_TAG, "The response is: " + responseCode);
                 is = conn.getInputStream();
